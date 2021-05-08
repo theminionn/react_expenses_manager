@@ -1,6 +1,9 @@
-import Expenses from './components/Expenses';
+import React from 'react';
 
-function App() {
+import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
+
+const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -23,11 +26,17 @@ function App() {
     },
   ];
 
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
   return (
     <div>
-      <Expenses
-        expenses={expenses}
-      />
+      <NewExpense />
+      <Expenses items={expenses} />
     </div>
   );
 }
